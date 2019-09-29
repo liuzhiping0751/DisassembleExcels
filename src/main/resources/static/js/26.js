@@ -1,0 +1,2 @@
+document.write('<a href="/" class="box"><h3 style="margin-bottom: 18px;">关闭预览</h3></a>');
+document.write('<a href="#" class="box boxs"><h3 style="margin-bottom: 18px;margin-left: 47px;">确定导入</h3></a>');

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>考试预览表</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <link href="css/bootstrapothertheme.css" rel="stylesheet"> -->
+
+    <!-- Custom CSS -->
+    <link href="../css/text_paper.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="top">
+
+        <div class="dao-hang">
+            <script src="../js/26.js"></script>
+        </div>
+
+
+        <span th:text="${Timu}"></span><br>
+        <p>本套试题共20个题目，前10道为单选题，后10道为多选题，共计100分。</p>
+    </div>
+
+    <!-- 分割线 -->
+    <hr style="height: 2px; border: none; border-top: 1px solid #BDBDBD;"/>
+
+    <div class="main">
+        <!-- 单选题 -->
+        <div class="SinTopSelection">
+            <span>一 . 单选题（每题4分，总分40分）</span>
+
+            <div class="question" th:each="SingleChoices:${singleChoices}">
+                <span class="p-number"></span><span th:text="${SingleChoices.singleTopic}"></span><br>
+
+                <label class="radio-inline">
+                    A.<input type="radio" name="inlineRadioOptions" value="option1"
+                             th:text="${SingleChoices.singleChoiceA}">
+                </label><br>
+                <label class="radio-inline">
+                    B.<input type="radio" name="inlineRadioOptions" value="option2"
+                             th:text="${SingleChoices.singleChoiceB}">
+                </label><br>
+                <label class="radio-inline">
+                    C.<input type="radio" name="inlineRadioOptions" value="option3"
+                             th:text="${SingleChoices.singleChoiceC}">
+                </label><br>
+                <label class="radio-inline">
+                    D.<input type="radio" name="inlineRadioOptions" value="option4"
+                             th:text="${SingleChoices.singleChoiceD}">
+                </label>
+                <!-- 分割线 -->
+                <hr>
+            </div>
+
+
+
+            <!-- div.SinTopSelection -->
+
+            <!-- 分割线 -->
+            <hr>
+
+            <!-- 多选题 -->
+            <div class="MultipleChoice">
+                <span>二 . 多选题（每题6分，总分60分）</span>
+
+                <div class="multi-select" th:each="MultipleChoices:${multipleChoices}">
+                    <span class="p-numbers"></span><span th:text="${MultipleChoices.MultipleTopic}"></span><br>
+
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option1" th:text="${MultipleChoices.MultipleChoiceA}">
+                    </label><br>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option2" th:text="${MultipleChoices.MultipleChoiceB}">
+                    </label><br>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option3" th:text="${MultipleChoices.MultipleChoiceC}">
+                    </label><br>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option4" th:text="${MultipleChoices.MultipleChoiceD}">
+                    </label><br>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option5" th:text="${MultipleChoices.MultipleChoiceE}">
+                    </label>
+
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option6" th:text="${MultipleChoices.MultipleChoiceF}">
+                    </label>
+                    <!-- 分割线 -->
+                    <hr>
+
+                </div>
+
+                <script type="text/javascript">
+                    $(".p-number").each(function (index) {
+                        $(this).text((index+1)+"、");
+                    });
+
+                    $(".p-numbers").each(function (index) {
+                        $(this).text((index+1)+"、");
+                    });
+
+                </script>
+
+            </div>
+            <!-- div.MultipleChoice -->
+        </div>
+        <!-- div.main -->
+
+        <!-- 分割线 -->
+        <hr style="height: 2px; border: none; border-top: 1px solid #BDBDBD;"/>
+
+        <div class="bottom">
+            <button type="button" class="btn btn-default">提交答卷</button>
+        </div>
+
+
+    </div>
+    <!-- div.container-->
+
+
+</div>
+</body>
+</html>

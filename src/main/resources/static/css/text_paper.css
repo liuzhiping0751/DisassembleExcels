@@ -1,0 +1,135 @@
+body{
+    background-color: #75C3AD;
+}
+
+.container{
+    width: 60%;
+    margin: 50px auto;
+    background-color: #FAFAFA;
+}
+.top{
+    text-align: center;
+    margin-top: 50px;
+}
+.top .box {
+    margin-left: 50px;
+    width: 177px;
+    line-height: 100px;
+    background: #337ab7;
+    color: white;
+    clip-path: polygon(10% 0,100% 20%,100% 80%,100% 80%,10% 100%);
+    position: fixed;
+    top: 84px;
+    left: 10%;
+}
+.top .boxs{
+    clip-path: polygon(10% 20%,100% 0%,100% 80%,100% 100%,10% 80%);
+    top: 141px;
+}
+
+@media only screen and (max-width : 1200px) {
+	.top .box {
+		left: 3%;
+	}
+}
+@media only screen and (max-width : 992px) {
+	
+	.top .box {
+		left: 0%;
+	}
+}
+@media only screen and (max-width : 768px) {
+	
+	.top .box {
+		width:166px;
+		left: -7%;
+	}
+}
+
+
+.top a{
+    margin: auto;
+    font-size: 22px;
+    text-decoration: none;
+	z-index:100;
+}
+.top a:hover{
+    background-color: #2e6f96;
+}
+
+.top span{
+    font-size: 28px;
+    color: #58D3F7;
+    font-weight: bold;
+}
+.top p{
+    font-size: 18px;
+    color: #BDBDBD;
+    margin-top: 20px;
+}
+.main{
+    margin-left: 50px;
+}
+.SinTopSelection>span{
+    font-size: 16px;
+    color: #2E2E2E;
+    font-weight: bold;
+}
+.question{
+    margin: 20px 0 0 50px;
+}
+.question>span{
+    font-size: 16px;
+    font-weight: bold;
+}
+.radio-inline{
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.MultipleChoice{
+    margin-top: 50px;
+}
+.MultipleChoice>span{
+    font-size: 16px;
+    color: #2E2E2E;
+    font-weight: bold;
+}
+.multi-select{
+    margin: 20px 0 0 50px;
+}
+.multi-select>span{
+    font-size: 16px;
+    font-weight: bold;
+}
+.checkbox-inline{
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.bottom{
+    margin-top:80px ;
+    text-align: center;
+}
+.bottom>button{
+    width: 200px;
+    height: 50px;
+    color:white;
+    background-color: #337ab7;
+    margin: 0 0 40px 0;
+}
+.bottom button:hover{
+	background-color: #2e6f96;
+	color:white;
+}
+
+.main hr{
+	border-bottom: #b2afb5 1px dashed;
+	border-left: #b2afb5 1px dashed;
+	border-top: #b2afb5 1px dashed;
+	border-right: #b2afb5 1px dashed;
+	width:80%;
+}
+
+.radio-inline input[type="radio"]{
+    margin-left: -29px !important;
+}
