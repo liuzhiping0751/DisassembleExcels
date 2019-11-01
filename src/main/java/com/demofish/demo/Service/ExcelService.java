@@ -123,7 +123,7 @@ public class ExcelService {
      * @return 格式化单元格
      */
     private String[] getStrings(Row row) {
-        String[] strings = new String[10];
+        String[] strings = new String[8];
         for (int j = 0; j < strings.length; j++) {
             row.getCell(j + 1).setCellType(CellType.STRING);
             strings[j] = row.getCell(j + 1).getStringCellValue();
