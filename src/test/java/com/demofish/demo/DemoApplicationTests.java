@@ -4,6 +4,7 @@ import com.demofish.demo.Bean.MultipleChoice;
 import com.demofish.demo.Bean.SingleChoice;
 import com.demofish.demo.Service.ExcelService;
 import com.demofish.demo.model.ResultMap;
+import com.demofish.demo.util.ExcelUtil;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -20,10 +21,8 @@ import org.springframework.util.ResourceUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.io.IOException;
+import java.util.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -100,6 +99,32 @@ public class DemoApplicationTests {
         for (MultipleChoice multipleChoice : multipleChoices) {
             System.out.println(multipleChoice.toString() + "\n");
         }
+    }
+
+
+
+    @Test
+    public void test3() {
+        File file = new File("C:\\Users\\Administrator\\Documents\\Tencent Files\\2452740632\\FileRecv\\Execldemo\\ExcelModel\\test.xlsx");
+        List<List<String>> textExcel = new ArrayList<>();
+
+        try {
+            textExcel = ExcelUtil.excelToStr(file, 0);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        for (List<String> strings : textExcel) {
+            if (strings.get(0).equals("d") && strings.get(0) != null) {
+                SingleChoice singleChoice =
+                        new SingleChoice(strings.get(1), strings.get(2), strings.get(3), strings.get(4), strings.get(5), strings.get(8));
+                System.out.println(singleChoice.toString());
+            } else {
+                System.out.println(strings);
+            }
+        }
+
+
     }
 
 
